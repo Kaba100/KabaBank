@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             x:Class="KabaBank.Pages.HomePage"
+             Title="HomePage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="frameColor" x:FactoryMethod="FromRgba">
+                <x:Arguments>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>70</x:Byte>
+                </x:Arguments>
+            </Color>
+             
+            <!--<Color x:Key="accentColor" x:FactoryMethod="FromHex">
+                <x:Arguments>
+                    <x:String>"#B3C855"</x:String> 
+                </x:Arguments>
+            </Color>-->
+
+            <Color x:Key="accentColor">Yellow</Color>
+
+            <Style TargetType="Frame">
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="HeightRequest" Value="88"/>
+            </Style>
+        </ResourceDictionary>
+
+        <FontImageSource x:Key="FontImageSourceAddress"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.AddressBook}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceMoneyBills"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.MoneyBills}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceFileInvoice"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.FileInvoice}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceWallet"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Wallet}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceLaptop"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Mobile}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceDumbbell"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Dumbbell}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourcePersonHarassing"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.PersonHarassing}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceCrow"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.InternetExplorer}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceHandShake"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Handshake}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceShop"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Shop}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceTruck"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Truck}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceCameraMovie"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.MoneyBill1}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceBell"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Bell}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceAngleDown"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.ChevronDown}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourcePen"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Pen}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid RowDefinitions="0.5*,0.45*">
+            <Grid Grid.Row="0" RowDefinitions="Auto,Auto,Auto,Auto,0.1*">
+                <Grid.Background>
+                    <LinearGradientBrush>
+                        <GradientStop Color="#151412"  Offset="0.1"/>
+                        <GradientStop Color="#0C0B09" Offset="1.0 "/>
+                    </LinearGradientBrush>
+                </Grid.Background>
+                <Grid Grid.Row="0">
+                    <Label x:Name="GreetingLabel" HorizontalTextAlignment="Start" FontFamily="GilroyBold" 
+                           FontSize="18" TextColor="White" Margin="15"/>
+                </Grid>
+                <Grid Grid.Row="1" Margin="10,0" ColumnDefinitions="0.25*,0.4*,0.15*">
+                    <Button BackgroundColor="White" HeightRequest="15" WidthRequest="60" Margin="15,0,70,0"/>
+                    <Label Grid.Column="1" Text="Kaba Bank" HorizontalTextAlignment="End" FontAttributes="Bold" 
+                           TextColor="White" FontSize="Title" FontFamily="GilroyBold"/>
+                    <Image Grid.Column="2" Source="{StaticResource FontImageSourceBell}" HeightRequest="30" WidthRequest="30" Margin="30,0,0,0"/>
+
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="0.7*,0.15*,0.15*">
+                    <Label Grid.Column="0" Text="My favourites" FontSize="18" TextColor="White" FontAttributes="Bold" FontFamily="GilroyBold" Margin="15,0,0,0"/>
+                    <Label Grid.Column="2" Text="Edit" FontSize="18" TextColor="Yellow" FontAttributes="Bold" HorizontalOptions="End" FontFamily="GilroyBold" Margin="0,0,15,0"/>
+                    <Image Grid.Column="1" BackgroundColor="Transparent" Source="{StaticResource FontImageSourcePen}" Margin="45,0,0,0" />
+                </Grid>
+                <Grid Grid.Row="3">
+                    <Frame HeightRequest="285" CornerRadius="5" WidthRequest="420" BackgroundColor="Transparent" BorderColor="Transparent">
+                        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*,*,*" WidthRequest="300" Margin="15,0" RowSpacing="1" ColumnSpacing="1">
+                            <Frame Grid.Row="0" Grid.Column="0" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceHandShake}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Rewards&#10;Referral" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="1" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceMoneyBills}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="POS FastPay" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="2" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceFileInvoice}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Kaba&#10;Transfers" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="3" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceWallet}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Other Banks&#10;Transfers" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="0" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceLaptop}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Mobile&#10;Top-up" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="1" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceDumbbell}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Data&#10;Purchase" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="2" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourcePersonHarassing}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Bills&#10;Payment" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="3" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceCrow}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="International&#10;Airtime" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            
+                            <Frame Grid.Row="2" Grid.Column="0" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceShop}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Loans" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="1" CornerRadius="1" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceTruck}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Central" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="2" CornerRadius="2" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceCameraMovie}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Foreign&#10;Currency" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="3" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceBell}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Transaction&#10;History" Grid.Row="1" TextColor="White" FontSize="9" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <VerticalStackLayout>
+                        <Label Text="Show All" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="GilroyBold"
+                               TextColor="White" FontSize="18"/>
+                        <Image Source="{StaticResource FontImageSourceAngleDown}"/>
+                    </VerticalStackLayout>
+                    
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" RowDefinitions="0.13*,0.25*,0.15*,0.4*" BackgroundColor="#151412">
+                <Grid Grid.Row="0" ColumnDefinitions="*,*">
+                    <Grid Grid.Column="0">
+                        <Label Text="1-Tap Payment" HorizontalTextAlignment="Start" TextColor="White" Margin="15,30,0,0"
+                               FontFamily="GilroyBold" FontAttributes="Bold" FontSize="15"/>
+                    </Grid>
+                    <Grid Grid.Column="1">
+                        <Label Text="Edit" HorizontalTextAlignment="End" FontAttributes="Bold" Margin="0,30,15,0"
+                               TextColor="Yellow"/>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Payments}">
+                        <CollectionView.ItemsLayout >
+                            <LinearItemsLayout Orientation="Horizontal"/>
+                        </CollectionView.ItemsLayout>
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame CornerRadius="10" BackgroundColor="#24221F" HeightRequest="65" Margin="15,30,0,0" Padding="0">
+                                    <Grid RowDefinitions="0.4*,0.6*" Margin="0" Padding="0" WidthRequest="130">
+                                        <Grid Grid.Row="0" BackgroundColor="{Binding HighLightColor}">
+                                            <Image Source="{Binding Image}"/>
+                                        </Grid>
+                                        <Grid Grid.Row="1" RowDefinitions="Auto,Auto">
+                                            <Grid Grid.Row="0">
+                                                <Label Text="{Binding Transaction}" Margin="0,10,0,0" TextColor="White" FontFamily="GilroyBold" FontSize="11" HorizontalTextAlignment="Center"/>
+                                            </Grid>
+                                            <Grid Grid.Row="1">
+                                                <Label Text="{Binding Amount}" Margin="0,4,0,0" TextColor="Yellow" FontFamily="GilroyBold"
+                                                       FontSize="8" HorizontalTextAlignment="Center"/>
+                                            </Grid>
+                                        </Grid>
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="*,*">
+                    <Label Grid.Column="0" Text="Featured" FontAttributes="Bold" FontFamily="GilroyBold" TextColor="White" 
+                           HorizontalTextAlignment="Start" FontSize="16" Margin="15,40,0,10"/>
+                    <Label Grid.Column="1" Text="More" FontAttributes="Bold" FontFamily="GilroyBold" TextColor="Yellow" 
+                           HorizontalTextAlignment="End" FontSize="14" Margin="0,40,15,10"/>
+                </Grid>
+                <CarouselView Grid.Row="3" WidthRequest="330" ItemsSource="{Binding Adverts}"  IsSwipeEnabled="True"
+                              HeightRequest="185" Margin="15,0">
+                    <CarouselView.IndicatorView>
+                        <IndicatorView IndicatorColor="Beige" SelectedIndicatorColor="Blue" IndicatorSize="10"/>
+                    </CarouselView.IndicatorView>
+                    <CarouselView.ItemTemplate>
+                        <DataTemplate>
+                            <Border StrokeThickness="0">
+                                <Border.StrokeShape>
+                                    <RoundRectangle CornerRadius="10"/>
+                                </Border.StrokeShape>
+                                <Image Source="{Binding Image}" Aspect="AspectFill" Margin="0"/>
+                            </Border>
+                        </DataTemplate>
+                    </CarouselView.ItemTemplate>
+                </CarouselView>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

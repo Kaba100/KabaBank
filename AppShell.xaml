@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="KabaBank.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:KabaBank"
+    xmlns:fontAwesome="clr-namespace:FontAwesome"
+    xmlns:pages="clr-namespace:KabaBank.Pages"
+    Shell.FlyoutBehavior="Disabled"
+    Shell.TabBarBackgroundColor="Black"
+    Shell.TabBarUnselectedColor="DarkGray"
+    Shell.TabBarTitleColor="Yellow">
+    <Shell.Resources>
+        <FontImageSource x:Key="FontImageSourceUser"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.User}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceHouse"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.House}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceSquare"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Bars}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceScanner"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Qrcode}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourcePeople"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.People}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceHeadset"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Headset}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+    </Shell.Resources>
+    <TabBar>
+        <Tab Title="Home" Icon="{StaticResource FontImageSourceHouse}">
+            <ShellContent ContentTemplate="{DataTemplate pages:HomePage }"/>
+        </Tab>
+        <Tab Title="Menu" Icon="{StaticResource FontImageSourceSquare }">
+            <ShellContent ContentTemplate="{DataTemplate pages:MenuPage }"/>
+        </Tab>
+        <Tab Title="Scan" Icon="{StaticResource FontImageSourceScanner}">
+            <ShellContent ContentTemplate="{DataTemplate pages:ScanPage }"/>
+        </Tab>
+        <Tab Title="Support" Icon="{StaticResource FontImageSourceHeadset}">
+            <ShellContent ContentTemplate="{DataTemplate pages:SupportPage }"/>
+        </Tab>
+        <Tab Title="Profile" Icon="{StaticResource FontImageSourceUser}">
+            <ShellContent ContentTemplate="{DataTemplate pages:ProfilePage }"/>
+        </Tab>
+    </TabBar>
+</Shell>

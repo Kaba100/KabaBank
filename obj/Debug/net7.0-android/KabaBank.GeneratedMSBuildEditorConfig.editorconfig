@@ -1,0 +1,75 @@
+is_global = true
+build_property.TargetFramework = net7.0-android
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = true
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.RootNamespace = KabaBank
+build_property.ProjectDir = C:\Users\G(T)H-ISHOLA\source\repos\KabaBank\KabaBank\
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/Pages/HomePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.Pages.HomePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\HomePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\HomePage.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/Pages/MenuPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.Pages.MenuPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\MenuPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\MenuPage.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/Pages/ProfilePage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.Pages.ProfilePage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ProfilePage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ProfilePage.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/Pages/ScanPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.Pages.ScanPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\ScanPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\ScanPage.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/Pages/SupportPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.Pages.SupportPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\SupportPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\SupportPage.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[C:/Users/G(T)H-ISHOLA/source/repos/KabaBank/KabaBank/ViewModel/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = KabaBank.ViewModel.App.xaml
+build_metadata.AdditionalFiles.TargetPath = ViewModel\App.xaml
+build_metadata.AdditionalFiles.RelativePath = ViewModel\App.xaml

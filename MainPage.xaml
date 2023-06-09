@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KabaBank.MainPage"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="frameColor" x:FactoryMethod="FromRgba">
+                <x:Arguments>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>70</x:Byte>
+                </x:Arguments>
+            </Color>
+            <Style TargetType="Frame">
+                <Setter Property="BorderColor" Value="Transparent"/>
+                <Setter Property="HeightRequest" Value="88"/>
+            </Style>
+        </ResourceDictionary>
+
+        <FontImageSource x:Key="FontImageSourceAddress"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.AddressBook}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid RowDefinitions="0.65*,0.35*">
+            <Grid Grid.Row="0" BackgroundColor="#5664C5" RowDefinitions="Auto,Auto,Auto,Auto,0.8*,Auto">
+                <Grid Grid.Row="0">
+                    <Label Text="Good Afternoon," HorizontalTextAlignment="Start" FontFamily="GilroyBold" 
+                           FontSize="18" TextColor="White" Margin="10"/>
+                </Grid>
+                <Grid Grid.Row="1" Margin="10,0" ColumnDefinitions="0.25*,0.4*,0.15*">
+                    <Button BackgroundColor="White" HeightRequest="15" WidthRequest="60" Margin="20,0,70,0"/>
+                    <Label Grid.Column="1" Text="Kaba Bank" HorizontalTextAlignment="End" FontAttributes="Bold" 
+                           TextColor="White" FontSize="Title" FontFamily="GilroyBold"/>
+                    <Image Grid.Column="2" Source="dotnet_bot.svg" HeightRequest="30" WidthRequest="30" Margin="35,0,0,0"/>
+
+                </Grid>
+                <Grid Grid.Row="2" ColumnDefinitions="*,*">
+                    <Label Grid.Column="0" Text="My favourites" FontSize="18" TextColor="White" FontAttributes="Bold" FontFamily="GilroyBold" Margin="10,0,0,0"/>
+                    <Label Grid.Column="1" Text="Edit" FontSize="18" TextColor="White" FontAttributes="Bold" FontFamily="GilroyBold" Margin="140,0,0,0"/>
+                </Grid>
+                <Grid Grid.Row="3" BackgroundColor="#5664C5">
+                    <Frame HeightRequest="285" CornerRadius="5" BackgroundColor="Transparent" BorderColor="Transparent">
+                        <Grid RowDefinitions="*,*,*" ColumnDefinitions="*,*,*,*" Margin="0,0" RowSpacing="1" ColumnSpacing="1">
+                            <!--<Frame Grid.Row="0" Grid.Column="0" CornerRadius="0"  BackgroundColor="Transparent" >
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Rewards&#10;Referral" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>-->
+                            <Frame Grid.Row="0" Grid.Column="1" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="POS FastPay" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="2" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Kaba&#10;Transfers" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="3" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Other Banks&#10;Transfers" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="0" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Mobile&#10;Top-up" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="1" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Data&#10;Purchase" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="2" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Bills&#10;Payment" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="1" Grid.Column="3" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="International&#10;Airtime" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="0" Grid.Column="0" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Rewards&#10;Referral" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="0" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Loans" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="1" CornerRadius="1" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Central" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="2" CornerRadius="2" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Foreign&#10;Currency" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                            <Frame Grid.Row="2" Grid.Column="3" CornerRadius="0" Padding="0" BorderColor="Transparent" BackgroundColor="{StaticResource frameColor}">
+                                <Grid RowDefinitions=".5*,.5*">
+                                    <Image Source="{StaticResource FontImageSourceAddress}" Grid.Row="0" HorizontalOptions="Center"/>
+                                    <Label Text="Transaction&#10;History" Grid.Row="1" TextColor="White" FontSize="8" HorizontalOptions="Center" HorizontalTextAlignment="Center"/>
+                                </Grid>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                </Grid>
+                <Grid Grid.Row="4">
+                    <Label Text="Show All&#10;^" HorizontalTextAlignment="Center" FontAttributes="Bold" FontFamily="GilroyBold" TextColor="White" FontSize="18"/>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" RowDefinitions="0.15*,0.3*,0.15*,0.4*">
+                
+            </Grid>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>

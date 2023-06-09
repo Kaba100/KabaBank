@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             x:Class="KabaBank.Pages.SupportPage"
+             Title="SupportPage"
+             Shell.NavBarIsVisible="False">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Color x:Key="frameColor" x:FactoryMethod="FromRgba">
+                <x:Arguments>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>255</x:Byte>
+                    <x:Byte>70</x:Byte>
+                </x:Arguments>
+            </Color>
+
+            <!--<Color x:Key="accentColor" x:FactoryMethod="FromHex">
+                <x:Arguments>
+                    <x:String>"#B3C855"</x:String> 
+                </x:Arguments>
+            </Color>-->
+
+            <Color x:Key="accentColor">Yellow</Color>
+
+           
+        </ResourceDictionary>
+
+        <FontImageSource x:Key="FontImageSourceMoneyBills"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.MoneyBills}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+
+        <FontImageSource x:Key="FontImageSourceStarExclamation"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Star}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceChalkboardUser"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.ChalkboardUser}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceTwitter"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Twitter}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceFacebook"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Facebook}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceInstagram"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Instagram}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourcePhone"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.Phone}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceEnvelopeOpenText"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.EnvelopeOpenText}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceFileCircleQuestion"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.FileCircleQuestion}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceHexagonExclamation"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.HexagonExclamation}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceMessageSmile"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.MessageSmile}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        <FontImageSource x:Key="FontImageSourceAccessibleTcon"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.AccessibleIcon}"
+                         Color="{x:StaticResource accentColor}"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+        
+
+
+
+    </ContentPage.Resources>
+    
+    <ScrollView>
+        <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+              BackgroundColor="#000">
+            <Grid Grid.Row="0" RowDefinitions="Auto,Auto,Auto">
+                <Label Grid.Row="0" Text="Support" FontSize="Large" Margin="0,5,0,0" HorizontalOptions="Center" 
+                       TextColor="White"/>
+                <Label Grid.Row="1" Text="App version 2.6.2.1" Margin="0,5,5,5" HorizontalOptions="End" 
+                       FontFamily="GilroyBold" FontSize="10" TextColor="White"/>
+                <Grid HeightRequest="50" BackgroundColor="Orange" Grid.Row="2" ColumnDefinitions="Auto,Auto,Auto">
+                    <Image Grid.Column="0" HeightRequest="30" Source="{StaticResource FontImageSourceStarExclamation}" Margin="18"/>
+                    <Label Grid.Column="1" TextColor="White" Text="What is new in this version?" VerticalOptions="Center"
+                           FontFamily="GilroyBold"/>
+                    <Button Grid.Column="2" BackgroundColor="Transparent" TextColor="Yellow" Text="Click here"
+                             Padding="0,0,10,0" VerticalOptions="Center" FontFamily="GilroyBold"/>
+                </Grid>
+            </Grid>
+            <BoxView Grid.Row="1" HeightRequest="10" BackgroundColor="Black"/>
+            <Grid Grid.Row="2" RowDefinitions="Auto,Auto" Background="#222">
+                <Label Grid.Row="0" Text="Support" TextColor="White" Margin="5,0,0,10"/>
+                <Grid Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Supports}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="0.2*,0.65*,0.15*" RowDefinitions="Auto,Auto" HeightRequest="70" RowSpacing="1">
+                                    <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,22" >
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"  Margin="15,0,0,22" />
+                                    <Image Grid.Column="2" Source="{StaticResource FontImageSourceGreaterThan}"
+                                           HeightRequest="15" VerticalOptions="Center"  Margin="15,0,0,22"/>
+                                    <BoxView Grid.Row="3" Grid.ColumnSpan="3" HeightRequest="2" Color="#2F2D29"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Grid>
+            <BoxView Grid.Row="3" Grid.ColumnSpan="3" HeightRequest="10" Margin="0,0,0,0" VerticalOptions="Start" Color="#000"/>
+            <Grid Grid.Row="4" RowDefinitions="Auto,Auto" Background="#222">
+                <Label Grid.Row="0" Text="Social Media" TextColor="White" Margin="5,2,0,10"/>
+                <Grid Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding SocialMedias}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="0.2*,0.65*,0.15*" RowDefinitions="Auto,Auto" HeightRequest="70" RowSpacing="1">
+                                    <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,22" >
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"  Margin="15,0,0,22"/>
+                                    <BoxView Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="2"  Color="#2F2D29"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Grid>
+            <BoxView Grid.Row="5" Grid.ColumnSpan="3" HeightRequest="10" Margin="0,0,0,0" VerticalOptions="Start" Color="#000"/>
+            <Grid Grid.Row="6" RowDefinitions="Auto,Auto" Background="#222">
+                <Label Grid.Row="0" Text="Call Us" TextColor="White" FontFamily="GilroyBold" Margin="5,0,0,10"/>
+                <Grid Grid.Row="1">
+                    <CollectionView ItemsSource="{Binding Calls}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="0.2*,0.65*,0.15*" RowDefinitions="Auto,Auto" HeightRequest="70" RowSpacing="1">
+                                    <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,22" >
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"  Margin="15,0,0,22"/>
+                                    <BoxView Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="2"  Color="#2F2D29"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="7" Background="#222">
+                <CollectionView ItemsSource="{Binding CheckIns}">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid ColumnDefinitions="0.2*,0.8*" RowDefinitions="Auto,Auto" HeightRequest="70" RowSpacing="1">
+                                <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,22" >
+                                    <Image.Clip>
+                                        <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                    </Image.Clip>
+                                </Image>
+                                <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"  Margin="15,0,0,22"/>
+                                <BoxView Grid.Row="1" Grid.ColumnSpan="3" HeightRequest="2"  Color="#2F2D29"/>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:fontAwesome="clr-namespace:FontAwesome"
+             x:Class="KabaBank.Pages.ProfilePage"
+             Title="ProfilePage"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.Resources>
+       
+        <FontImageSource x:Key="FontImageSourceArrowDown"
+                         Glyph="{x:Static fontAwesome:FontAwesomeIcons.ArrowDown}"
+                         Color="White"
+                         Size="20"
+                         FontFamily="FontAwesome"/>
+    </ContentPage.Resources>
+
+    <ScrollView>
+        <Grid RowDefinitions="0.2*,Auto">
+            <Grid Grid.Row="0" BackgroundColor="#000" RowDefinitions="0.2*,0.45*,0.25*,0.1*">
+                <Label Grid.Row="0" Text="Profile" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"
+                       TextColor="White" FontFamily="GilroyBold" FontSize="15"/>
+                <Frame Grid.Row="1" HeightRequest="80" BorderColor="DarkGray" BackgroundColor="#222" Margin="180"
+                       WidthRequest="80" CornerRadius="100">
+                    <Image  Source="people.png" HeightRequest="80" WidthRequest="80">
+                        <Image.Clip>
+                            <EllipseGeometry RadiusX="40" RadiusY="40" Center="40,40"/>
+                        </Image.Clip>
+                    </Image>
+                </Frame>
+                <Label Grid.Row="2" Text="Kaba Jaka Tidanke" FontSize="20" FontAttributes="Bold" Margin="0,10,0,0" 
+                       HorizontalOptions="CenterAndExpand" TextColor="White" FontFamily="GilroyBold"/>
+                <Label Grid.Row="3" Text="Show Details" FontSize="10" Margin="0,0,0,2" FontFamily="GilroyBold" 
+                       HorizontalOptions="CenterAndExpand" TextColor="White"/>
+            </Grid>
+            <Grid Grid.Row="1" Background="#222" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+                <Grid Grid.Row="0" RowDefinitions="Auto,Auto">
+                    <Label Grid.Row="0" Text="Privacy and Security" TextColor="White" Margin="1,0,0,0" FontFamily="GilroyBold"/>
+                    <Grid Grid.Row="1" >
+                        <CollectionView Grid.Row="0" ItemsSource="{Binding Works}">
+                            <CollectionView.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="0.2*,0.65*,0.15*" HeightRequest="70">
+                                        <Image Grid.Column="0" Source="{Binding Icons }" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,0" >
+                                            <Image.Clip>
+                                                <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                            </Image.Clip>
+                                        </Image>
+                                        <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"/>
+                                        <Switch Grid.Column="2" OnColor="#000" ThumbColor="Yellow" HorizontalOptions="End" Margin="0,0,15,0" IsVisible="{Binding IsVisible}" 
+                                                IsEnabled="True" IsToggled="{Binding IsActive}"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </CollectionView.ItemTemplate>
+                        </CollectionView>
+                    </Grid>
+                </Grid>
+                <BoxView Grid.Row="1" HeightRequest="10" BackgroundColor="Black" />
+                <Grid Grid.Row="2" RowDefinitions="Auto,Auto" >
+                    <Label Grid.Row="0" Text="General" TextColor="White" Margin="5,0,0,0"/>
+                    <CollectionView Grid.Row="1" ItemsSource="{Binding Generals}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="0.2*,0.65*,0.15*" HeightRequest="70">
+                                    <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,0" >
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"/>
+                                    <Image Grid.Column="2" Source="{StaticResource FontImageSourceArrowDown }"
+                                           HeightRequest="10" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+                <BoxView Grid.Row="3" HeightRequest="10" BackgroundColor="Black"/>
+                <Grid Grid.Row="4"  RowDefinitions="Auto,Auto">
+                    <Label Grid.Row="0" Text="Limits" TextColor="White" Margin="5,0,0,0" FontFamily="GilroyBold"/>
+                    <CollectionView Grid.Row="1" ItemsSource="{Binding Unlimiteds}" >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="0.2*,0.65*,0.15*" HeightRequest="70">
+                                    <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,0" >
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"/>
+                                    <Image Grid.Column="2" Source="{StaticResource FontImageSourceArrowDown }"
+                                           HeightRequest="10" />
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+                <BoxView Grid.Row="5" HeightRequest="10" BackgroundColor="Black"/>
+                <Grid Grid.Row="6" RowDefinitions="Auto,Auto,Auto">
+                    <Label Grid.Row="0" Text="Appearance" TextColor="White" FontFamily="GilroyBold"/>
+                    <Frame Grid.Row="1" CornerRadius="5" HeightRequest="80" Background="Black" Margin="25,0" 
+                           BorderColor="Transparent">
+                        <Grid HeightRequest="75" ColumnDefinitions="Auto,Auto,Auto">
+                            <Label Grid.Column="0" Margin="15,25,0,0" Text="Dark" FontSize="15" TextColor="White"/>
+                            <Label Grid.Column="1" Margin="15,25,0,0" Text="Light" HorizontalOptions="Center" FontSize="15" TextColor="White"/>
+                            <Frame Grid.Column="2"  Margin="15,5,1,5" WidthRequest="155" BackgroundColor="DeepSkyBlue" CornerRadius="5" BorderColor="Transparent" HorizontalOptions="FillAndExpand" HeightRequest="0">
+                                <Label Grid.Column="2" Text="System Default" FontFamily="GilroyBold" TextColor="#fff" VerticalOptions="Center" VerticalTextAlignment="Center" 
+                                       HorizontalTextAlignment="Center" HorizontalOptions="Fill"/>
+                            </Frame>
+                        </Grid>
+                    </Frame>
+                    <CollectionView Grid.Row="2" ItemsSource="{Binding Appearances}">
+                        <CollectionView.ItemTemplate >
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="0.2*,0.65*,0.15*" HeightRequest="70">
+                                    <Image Grid.Column="0" Source="{Binding Icons }" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,0" >
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"/>
+                                    <Switch Grid.Column="2" HorizontalOptions="End" Margin="0,0,15,0" IsVisible="{Binding IsVisible}" 
+                                             OnColor="#000" ThumbColor="Yellow"   IsEnabled="True" IsToggled="{Binding IsActive}"/>
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+                <BoxView Grid.Row="7" HeightRequest="10" BackgroundColor="Black"/>
+                <Grid Grid.Row="8">
+                    <CollectionView ItemsSource="{Binding Logouts}">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid ColumnDefinitions="0.2*,0.65*,0.15*" HeightRequest="70">
+                                    <Image Grid.Column="0" Source="{Binding Icon}" HeightRequest="30" VerticalOptions="Center"
+                                           WidthRequest="30" HorizontalOptions="Start" Margin="15,0,0,0">
+                                        <Image.Clip>
+                                            <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+                                        </Image.Clip>
+                                    </Image>
+                                    <Label Grid.Column="1"  Text="{Binding Name}" TextColor="White" VerticalOptions="Center"
+                                           HorizontalOptions="Start"/>
+                                    <!--<Image Grid.Column="2" Source="{StaticResource FontImageSourceArrowDown }"
+                                           HeightRequest="10" />-->
+                                </Grid>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Grid>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>
